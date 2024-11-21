@@ -1,8 +1,8 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../utils/postgreSQL');
 
-const Menu = sequelize.define('menu', {
-    idmenu: {
+const Usuario = sequelize.define('usuario', {
+    idusuario: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
@@ -10,26 +10,32 @@ const Menu = sequelize.define('menu', {
     nombre: {
       type: DataTypes.STRING(250),
     },
-    orden: {
-      type: DataTypes.INTEGER,
+    username: {
+      type: DataTypes.STRING(50),
     },
-    idpadre: {
-      type: DataTypes.INTEGER,
-    },
-    ruta: {
+    pass: {
       type: DataTypes.STRING(250),
     },
     estado: {
       type: DataTypes.BOOLEAN,
     },
-    icono: {
-        type: DataTypes.STRING(50),
+    aud_fecha_creacion: {
+      type: DataTypes.DATE,
+    },
+    aud_usuario_creacion: {
+        type: DataTypes.INTEGER,
+    },
+    aud_fecha_modificacion: {
+        type: DataTypes.DATE,
+    },
+    aud_usuario_modificacion: {
+        type: DataTypes.INTEGER,
     },
   },{
     // Opciones adicionales del modelo
     schema: 'public',// Esquema
-    tableName: 'menu', // Nombre de la tabla personalizada
+    tableName: 'usuario', // Nombre de la tabla personalizada
     timestamps: false
 });
 
-module.exports.Menu = Menu;
+module.exports.Usuario = Usuario;

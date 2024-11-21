@@ -1,4 +1,4 @@
-const { Menu } = require("../../models/menu");
+const { Menu } = require("../../model/menu");
 const { Sequelize, Op } = require("sequelize");
 
 const obtenerUsuarioMenu = async() => {
