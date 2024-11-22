@@ -61,7 +61,7 @@ const registrarHorario = async(horario) => {
 
     try {
         let horarioRegistrado = await registrarHorarioBD(horario);
-        response.message = "Distrito Registrado";
+        response.message = "Horario Registrado";
         console.info('Evento registrado', JSON.stringify(horarioRegistrado));
 
         if (horarioRegistrado != null) {

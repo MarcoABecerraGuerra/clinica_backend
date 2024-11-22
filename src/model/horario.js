@@ -7,6 +7,9 @@ const Horario = sequelize.define('horario', {
       primaryKey: true,
       autoIncrement: true,
     },
+    idturno: {
+      type: DataTypes.INTEGER,
+    },
     horaingreso: {
       type: DataTypes.STRING(20),
     },
