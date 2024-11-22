@@ -1,4 +1,5 @@
-const { Paciente } = require("../../models/paciente")
+const { Paciente } = require("../../model/paciente");
+
 
 const obtenerListaPaciente = async() => {
     //Realizar query consulta a postgresql
