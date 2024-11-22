@@ -79,15 +79,15 @@ router.put('/especialidad/editar', async (req, res) =>{
     res.status(data.statusCode).json(JSON.parse(data.body));
 })
 
-// **********************
-// CRUD PACIENTE
-// **********************
-
 router.delete('/especialidad/eliminar', async (req, res) =>{
     const { idespecialidad } = req.query
     let data = await eliminarEspecialidad(idespecialidad);
     res.status(data.statusCode).json(JSON.parse(data.body));
 })
+
+// **********************
+// CRUD PACIENTE
+// **********************
 
 router.get('/paciente', async (req, res) =>{
     let data = await getListPaciente();

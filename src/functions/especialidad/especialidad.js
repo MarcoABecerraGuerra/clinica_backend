@@ -1,5 +1,5 @@
 const { ApiInternalErrorResponse, ApiSuccesResponse } = require("../../utils/api-response");
-const { obtenerEspecialidadBD, obtenerListaEspecialidadBD, actualizarEspecialidadBD, registrarEspecialidadBD } = require("./especialidad.service");
+const { obtenerEspecialidadBD, obtenerListaEspecialidadBD, actualizarEspecialidadBD, registrarEspecialidadBD, deleteEspecialidadBD } = require("./especialidad.service");
 
 const obtenerListaEspecialidad = async() => {
 
@@ -35,7 +35,7 @@ const obtenerEspecialidad = async(idespecialidad) => {
     try {
 
         let especialidad = await obtenerEspecialidadBD(idespecialidad);
-        response.message = "Horario obtenido";
+        response.message = "Especialidad obtenido";
         response.data = especialidad;
 
         return new ApiSuccesResponse({
@@ -113,7 +113,7 @@ const eliminarEspecialidad = async(idespecialidad) => {
     let response = {};
 
     try {
-        let especialidadEliminado = await deleteHorarioBD(idespecialidad);
+        let especialidadEliminado = await deleteEspecialidadBD(idespecialidad);
         response.message = "Especialidad Eliminado";
         console.info('Especialidad registrado', JSON.stringify(especialidadEliminado));
 
